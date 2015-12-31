@@ -25,7 +25,6 @@ abstract class TestCase extends Orchestra
     protected function getPackageProviders($app)
     {
         return [
-            //\Illuminate\Session\SessionServiceProvider::class,
             \Waavi\SaveUrl\SaveUrlServiceProvider::class,
         ];
     }
@@ -68,7 +67,7 @@ abstract class TestCase extends Orchestra
             User::create(
                 [
                     'name'     => "user{$index}",
-                    'email'    => "user{$index}@spatie.be",
+                    'email'    => "user{$index}@waavi.com",
                     'password' => "password{$index}",
                 ]
             );
@@ -96,21 +95,5 @@ abstract class TestCase extends Orchestra
         Route::any('/no-save', ['middleware' => 'doNotSave', function () {
             return 'No Save';
         }]);
-    }
-
-    protected function setUpSession($app)
-    {
-        $app['config']->set('session', [
-            'driver'          => 'array',
-            'lifetime'        => 120,
-            'expire_on_close' => false,
-            'encrypt'         => false,
-            'lottery'         => [2, 100],
-            'path'            => '/',
-            'domain'          => 'localhost',
-        ]);
-
-        $kernel = app('Illuminate\Contracts\Http\Kernel');
-        $kernel->pushMiddleware('Illuminate\Session\Middleware\StartSession');
     }
 }
