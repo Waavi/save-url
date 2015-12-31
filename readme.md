@@ -25,7 +25,7 @@ Or manually edit your composer.json file:
 
 In config/app.php, add the following entry to the end of the providers array:
 
-	\Waavi\Mailman\SaveUrlServiceProvider::class,
+	Waavi\SaveUrl\SaveUrlServiceProvider::class,
 
 Publish the configuration file:
 
