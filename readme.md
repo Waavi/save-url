@@ -16,7 +16,8 @@ WAAVI is a web development studio based in Madrid, Spain. You can learn more abo
  Laravel  | translation
 :---------|:----------
  5.1.x    | 1.0.x
- 5.2.x    | 1.0.1 and higher
+ 5.2.x    | 1.0.1 and up
+ 5.3.x    | 1.0.2 and up
 
 ## Installation
 
