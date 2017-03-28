@@ -1,8 +1,9 @@
 {
-    "name": "waavi/save-url",
+    "name": "ron-maxweb/save-url",
     "description": "Laravel 5 package to redirect users to the last visited page on login.",
     "keywords": [
         "waavi",
+        "ron-maxweb",
         "laravel",
         "login",
         "save-url",
@@ -14,6 +15,11 @@
             "name": "Waavi",
             "email": "info@waavi.com",
             "homepage": "http://waavi.com"
+        },
+        {
+            "name": "Ron",
+            "email": "ron.marsden@maxwebsolutions.co.uk",
+            "homepage": "https://maxwebsolutions.co.uk"
         }
     ],
     "require": {
