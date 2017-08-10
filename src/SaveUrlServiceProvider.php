@@ -63,7 +63,7 @@ class SaveUrlServiceProvider extends ServiceProvider
      */
     public function registerMiddleware()
     {
-        $this->app[\Illuminate\Routing\Router::class]->middleware('doNotSave', DoNotSaveUrlMiddleware::class);
+        $this->app[\Illuminate\Routing\Router::class]->aliasMiddleware('doNotSave', DoNotSaveUrlMiddleware::class);
         $this->app[\Illuminate\Contracts\Http\Kernel::class]->pushMiddleware(SaveUrlMiddleware::class);
     }
 }

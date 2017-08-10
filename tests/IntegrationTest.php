@@ -9,8 +9,8 @@ class IntegrationTest extends TestCase
      */
     public function it_saves_the_url()
     {
-        $this->call('GET', '/save');
-        $this->assertSessionHas('saved-url', 'http://localhost/save');
+        $response = $this->call('GET', '/save');
+        $response->assertSessionHas('saved-url', 'http://localhost/save');
     }
 
     /**
@@ -18,8 +18,8 @@ class IntegrationTest extends TestCase
      */
     public function it_keeps_url_parameters()
     {
-        $this->call('GET', '/save?param=value');
-        $this->assertSessionHas('saved-url', 'http://localhost/save?param=value');
+        $response = $this->call('GET', '/save?param=value');
+        $response->assertSessionHas('saved-url', 'http://localhost/save?param=value');
     }
 
     /**
@@ -65,7 +65,7 @@ class IntegrationTest extends TestCase
     public function it_redirects_after_login()
     {
         $this->call('GET', '/save');
-        $this->call('GET', '/login/1');
-        $this->assertRedirectedTo('/save');
+        $response = $this->call('GET', '/login/1');
+        $response->assertRedirect('/save');
     }
 }
